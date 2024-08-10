@@ -1,0 +1,80 @@
+body {
+  font-family: serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.win {
+  background-color: #add8e6;
+  animation: flash 1s ease-in-out infinite;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    background-color: #add8e6;
+  }
+  50% {
+    background-color: #87ceeb;
+  }
+}
+
+#resetButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #add8e6;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.scores {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+}
